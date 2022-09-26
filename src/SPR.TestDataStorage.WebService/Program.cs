@@ -28,3 +28,5 @@ app.UseHealthChecks("/health", new HealthCheckOptions()
 });
 
 app.Run();
+
+public class Startup { }
