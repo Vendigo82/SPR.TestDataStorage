@@ -1,6 +1,8 @@
 using FluentAssertions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Net.Http.Json;
 using static SPR.TestDataStorage.WebService.Controllers.VersionController;
 
@@ -21,7 +23,8 @@ public class DefaultEndpointsTests : IClassFixture<WebApplicationFactory<Startup
         var response = await httpClient.GetAsync("/version");
 
         response.Should().Be200Ok();
-        var payload = await response.Content.ReadFromJsonAsync<VersionModel>();
-        payload!.Version.Should().Match("*.*.*.*");
+
+        JObject payload = JObject.Parse(await response.Content.ReadAsStringAsync());
+        payload["version"]!.Value<string>().Should().Match("*.*.*.*");
     }
 }

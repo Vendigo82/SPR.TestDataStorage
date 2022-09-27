@@ -18,7 +18,6 @@ namespace SPR.TestDataStorage.WebService.Controllers
 
         public class VersionModel
         {
-            [JsonProperty("version")]
             public string? Version { get; set; }
         }
     }
