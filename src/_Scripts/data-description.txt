@@ -1,0 +1,56 @@
+project
+    id guid
+    system_name text
+    
+object_type
+    id smallint vs guid
+    system_name text
+   
+data_section
+    id smallint vs guid
+    json_name text
+    
+object_type_data_section
+    object_type_id foreign key 
+    data_section_id foreign key
+    
+data_header
+    id guid
+    project_id guid foreign key
+    object_type_id foreign key
+    object_identity text
+    data_name text
+    unique (project_id, object_type_id, object_identity, data_name)
+    
+data_content
+    id guid
+    data_header_id guid
+    created_at timestampz
+    data_sections json
+    hash
+    unique (data_header_id, hash)
+
+   
+GET /data/{project}/{object_type}/{identity}/{data_name}
+PUT /data/{project}/{object_type}/{identity}/{data_name}
+{
+    "<section_name_1>": json,
+    "<section_name_2>": json,
+}
+
+GET /data/{project}/formula/{identity}/default
+{
+    "input": { .... },
+    "registers": {...},
+    "results": {...}
+}
+
+GET /data/vietnam/step/step1/default
+{
+    "input": { .... }
+}
+
+GET /data/{project}/{object_type}/{identity}
+{
+    "data_names": ["string"]
+}
