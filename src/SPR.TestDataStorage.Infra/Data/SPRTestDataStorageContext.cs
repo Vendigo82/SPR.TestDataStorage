@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using SPR.TestDataStorage.WebService.Models;
+using SPR.TestDataStorage.Infra.Models;
 
-namespace SPR.TestDataStorage.WebService.Data
+namespace SPR.TestDataStorage.Infra.Data
 {
     public partial class SPRTestDataStorageContext : DbContext
     {
+        public SPRTestDataStorageContext()
+        {
+        }
 
         public SPRTestDataStorageContext(DbContextOptions<SPRTestDataStorageContext> options)
             : base(options)

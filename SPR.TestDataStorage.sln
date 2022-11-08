@@ -5,11 +5,13 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{05D75F55-AA0C-40F8-9593-447E78B68C85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPR.TestDataStorage.WebService", "src\SPR.TestDataStorage.WebService\SPR.TestDataStorage.WebService.csproj", "{E27299A6-9AE8-4610-8A7F-704033E46173}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SPR.TestDataStorage.WebService", "src\SPR.TestDataStorage.WebService\SPR.TestDataStorage.WebService.csproj", "{E27299A6-9AE8-4610-8A7F-704033E46173}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{20DBA473-D436-4552-BB10-63102C2C56B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPR.TestDataStorage.WebService.Tests", "tests\SPR.TestDataStorage.WebService.Tests\SPR.TestDataStorage.WebService.Tests.csproj", "{71975E4B-4B72-4C08-9E91-ED4729109E4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SPR.TestDataStorage.WebService.Tests", "tests\SPR.TestDataStorage.WebService.Tests\SPR.TestDataStorage.WebService.Tests.csproj", "{71975E4B-4B72-4C08-9E91-ED4729109E4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPR.TestDataStorage.Infra", "src\SPR.TestDataStorage.Infra\SPR.TestDataStorage.Infra.csproj", "{8FF04D9D-1693-4E24-9DA7-8005769627F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{71975E4B-4B72-4C08-9E91-ED4729109E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71975E4B-4B72-4C08-9E91-ED4729109E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71975E4B-4B72-4C08-9E91-ED4729109E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FF04D9D-1693-4E24-9DA7-8005769627F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF04D9D-1693-4E24-9DA7-8005769627F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF04D9D-1693-4E24-9DA7-8005769627F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF04D9D-1693-4E24-9DA7-8005769627F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E27299A6-9AE8-4610-8A7F-704033E46173} = {05D75F55-AA0C-40F8-9593-447E78B68C85}
 		{71975E4B-4B72-4C08-9E91-ED4729109E4E} = {20DBA473-D436-4552-BB10-63102C2C56B4}
+		{8FF04D9D-1693-4E24-9DA7-8005769627F4} = {05D75F55-AA0C-40F8-9593-447E78B68C85}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77B01E2A-268F-4DDA-974F-FB41E5E9B381}

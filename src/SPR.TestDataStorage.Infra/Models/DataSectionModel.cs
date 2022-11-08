@@ -3,12 +3,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 
-namespace SPR.TestDataStorage.WebService.Models
+namespace SPR.TestDataStorage.Infra.Models
 {
     public partial class DataSectionModel
     {
         public Guid Id { get; set; }
         public string SystemName { get; set; } = null!;
+
         internal static void Build(EntityTypeBuilder<DataSectionModel> entity)
         {
             entity.ToTable("data_section", "data");

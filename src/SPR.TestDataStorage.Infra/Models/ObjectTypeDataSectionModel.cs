@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
-namespace SPR.TestDataStorage.WebService.Models
+namespace SPR.TestDataStorage.Infra.Models
 {
     public partial class ObjectTypeDataSectionModel
     {
@@ -12,6 +12,7 @@ namespace SPR.TestDataStorage.WebService.Models
 
         public virtual DataSectionModel DataSection { get; set; } = null!;
         public virtual ObjectTypeModel ObjectType { get; set; } = null!;
+
         internal static void Build(EntityTypeBuilder<ObjectTypeDataSectionModel> entity)
         {
             entity.HasNoKey();

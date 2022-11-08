@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
-namespace SPR.TestDataStorage.WebService.Models
+namespace SPR.TestDataStorage.Infra.Models
 {
     public partial class DataHeaderModel
     {

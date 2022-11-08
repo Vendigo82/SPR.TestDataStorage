@@ -1,7 +1,7 @@
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
-using SPR.TestDataStorage.WebService.Data;
+using SPR.TestDataStorage.Infra.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
