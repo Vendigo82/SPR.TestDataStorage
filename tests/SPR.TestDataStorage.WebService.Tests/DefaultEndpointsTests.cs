@@ -27,4 +27,13 @@ public class DefaultEndpointsTests : IClassFixture<WebApplicationFactory<Startup
         JObject payload = JObject.Parse(await response.Content.ReadAsStringAsync());
         payload["version"]!.Value<string>().Should().Match("*.*.*.*");
     }
+
+    [Theory]
+    [InlineData("/health")]
+    public async Task HealthEndpoint_ShouldBe200Ok(string url)
+    {
+        var response = await httpClient.GetAsync(url);
+
+        response.Should().Be200Ok();
+    }
 }
