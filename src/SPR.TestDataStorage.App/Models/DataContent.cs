@@ -8,7 +8,7 @@ public class DataContent
 
     public string ObjectType { get; init; } = string.Empty;
 
-    public Guid ObjectId { get; init; }
+    public string ObjectIdentity { get; init; } = string.Empty;
 
     public string DataName { get; init; } = string.Empty;
 

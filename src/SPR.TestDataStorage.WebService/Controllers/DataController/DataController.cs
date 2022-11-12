@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace SPR.TestDataStorage.WebService.Controllers.DataController;
 
@@ -14,7 +13,7 @@ public class DataController : ControllerBase
     public string ObjectType { get; set; } = null!;
 
     [FromRoute(Name = "objectId")]
-    public Guid ObjectId { get; set; }
+    public string ObjectIdentity { get; set; } = null!;
 
 
     [HttpPut("{name}")]
