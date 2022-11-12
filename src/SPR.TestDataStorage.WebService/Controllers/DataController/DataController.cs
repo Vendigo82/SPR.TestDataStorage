@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SPR.TestDataStorage.App.UseCases.SaveData;
+using System.ComponentModel.DataAnnotations;
 
 namespace SPR.TestDataStorage.WebService.Controllers.DataController;
 
@@ -6,19 +8,33 @@ namespace SPR.TestDataStorage.WebService.Controllers.DataController;
 [ApiController]
 public class DataController : ControllerBase
 {
-    [FromRoute(Name = "project")]
+    [FromRoute(Name = "project"), MinLength(1)]
     public string Project { get; set; } = null!;
 
-    [FromRoute(Name = "objectType")]
+    [FromRoute(Name = "objectType"), MinLength(1)]
     public string ObjectType { get; set; } = null!;
 
-    [FromRoute(Name = "objectId")]
+    [FromRoute(Name = "objectId"), MinLength(1)]
     public string ObjectIdentity { get; set; } = null!;
 
 
     [HttpPut("{name}")]
-    public async Task<IActionResult> PutDataAsync([FromRoute] string name)
+    public async Task<IActionResult> PutDataAsync(
+        [FromRoute, MinLength(1)] string name,
+        [FromServices] ISaveDataUseCase useCase)
     {
-        return Ok();
+        var result = await useCase.SaveDataAsync(new App.Models.DataContent
+        {
+            DataName = name,
+            Project = Project,
+            ObjectType = ObjectType,
+            ObjectIdentity = ObjectIdentity
+        });
+        if (result == SaveDataResult.Success)
+            return Ok();
+
+        
+        // TODO: analize result errors
+        return BadRequest();
     }
 }

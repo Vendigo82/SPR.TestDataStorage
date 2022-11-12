@@ -10,7 +10,12 @@ public enum SaveDataResult
     ObjectTypeNotFound
 }
 
-public class SaveDataUseCase
+public interface ISaveDataUseCase
+{
+    Task<SaveDataResult> SaveDataAsync(DataContent data);
+}
+
+public class SaveDataUseCase : ISaveDataUseCase
 {
     private readonly IDataRepository repository;
 

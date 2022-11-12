@@ -11,4 +11,8 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SPR.TestDataStorage.App\SPR.TestDataStorage.App.csproj" />
+  </ItemGroup>
+
 </Project>
